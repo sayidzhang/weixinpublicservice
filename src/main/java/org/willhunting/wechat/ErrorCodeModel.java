@@ -1,4 +1,4 @@
-package org.willhunting.webchat;
+package org.willhunting.wechat;
 
 public class ErrorCodeModel {
     private String errcode;//全局返回码

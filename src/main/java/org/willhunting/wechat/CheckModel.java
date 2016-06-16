@@ -1,4 +1,4 @@
-package org.willhunting.webchat;
+package org.willhunting.wechat;
 
 public class CheckModel extends ErrorCodeModel{
     String signature;

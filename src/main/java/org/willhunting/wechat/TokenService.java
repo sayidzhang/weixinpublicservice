@@ -1,4 +1,4 @@
-package org.willhunting.webchat;
+package org.willhunting.wechat;
 
 import java.util.Arrays;
  
