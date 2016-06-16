@@ -10,17 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Controller
-public class SimpleController {
 
+@Controller
+@RequestMapping("/wechat")
+public class TokenController {
     @Autowired
     private TokenService tokenService;
-    
-	@RequestMapping("/simple")
-	public @ResponseBody String simple() {
-		return "Hello world!";
-	}
-
+     
     /**
      * 开发者模式token校验
      *
@@ -30,7 +26,7 @@ public class SimpleController {
      * @throws ParseException
      * @throws IOException
      */
-    @RequestMapping(value = "wechat/check/{wxToken}", method = RequestMethod.GET, produces = "text/plain")
+    @RequestMapping(value = "/check/{wxToken}", method = RequestMethod.GET, produces = "text/plain")
     public @ResponseBody String validate(@PathVariable("wxToken")String wxToken,CheckModel tokenModel) throws ParseException, IOException {
         return tokenService.validate(wxToken,tokenModel);
     }
