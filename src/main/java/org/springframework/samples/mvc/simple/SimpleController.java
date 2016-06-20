@@ -42,4 +42,10 @@ public class SimpleController {
     	System.out.println("1");
     	System.out.println(x);
     }
+    
+    @RequestMapping(value = "wechat/t1", method = RequestMethod.POST)
+    @ResponseBody
+    public String postFoos() {
+        return "Post some Foos";
+    }
 }
