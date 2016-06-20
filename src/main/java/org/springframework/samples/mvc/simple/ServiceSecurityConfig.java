@@ -12,13 +12,12 @@ public class ServiceSecurityConfig extends WebSecurityConfigurerAdapter {
 	  protected void configure(HttpSecurity http) throws Exception {
 		  System.out.println("disable csrf...");
 
-		  http
-	                .authorizeRequests()
-	                .antMatchers("/resources/**").permitAll()
-	                .antMatchers("/login").permitAll();
-
-		  http.httpBasic();
-		  http.csrf().disable();
+			http
+			.antMatcher("/api/**")                              
+			.authorizeRequests()
+				.anyRequest().hasRole("ADMIN")
+				.and()
+			.httpBasic();
 	  }
 	}
 
