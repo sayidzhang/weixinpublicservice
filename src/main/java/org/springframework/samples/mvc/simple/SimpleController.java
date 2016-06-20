@@ -36,7 +36,7 @@ public class SimpleController {
     }
     
     
-    @RequestMapping(value = "wechat/receive", method = RequestMethod.GET, produces = "text/plain")
+    @RequestMapping(value = "wechat/receive", method = RequestMethod.POST, produces = "text/plain")
     public @ResponseBody String receive(String x) throws ParseException, IOException {
     	System.out.println("1");
     	System.out.println(x);
