@@ -1,10 +1,12 @@
 package org.springframework.samples.mvc.simple;
 
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+@ComponentScan
 @EnableWebSecurity
 @Configuration
 public class ServiceSecurityConfig extends WebSecurityConfigurerAdapter {
