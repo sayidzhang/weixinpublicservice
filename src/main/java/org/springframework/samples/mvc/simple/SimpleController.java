@@ -34,4 +34,12 @@ public class SimpleController {
     public @ResponseBody String validate(@PathVariable("wxToken")String wxToken,CheckModel tokenModel) throws ParseException, IOException {
         return tokenService.validate(wxToken,tokenModel);
     }
+    
+    
+    @RequestMapping(value = "wechat/receive", method = RequestMethod.GET, produces = "text/plain")
+    public @ResponseBody String receive(String x) throws ParseException, IOException {
+    	System.out.println("1");
+    	System.out.println(x);
+        return "y";
+    }
 }
