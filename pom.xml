@@ -15,12 +15,9 @@
 	</properties>
 	<dependencies>
 		<!-- Spring -->
+
 		<dependency>
-			<dependency>
-				<groupId>org.springframework.security</groupId>
-				<artifactId>spring-security-config</artifactId>
-				<version>${org.springframework-version}</version>
-			</dependency>
+
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${org.springframework-version}</version>
@@ -154,6 +151,11 @@
 			<artifactId>spring-security-web</artifactId>
 			<version>${org.springframework.security-version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${org.springframework.security-version}</version>
+		</dependency>
 		<!-- Test -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -192,12 +194,7 @@
 			<id>org.springframework.maven.snapshot</id>
 			<name>Spring Maven Snapshot Repository</name>
 			<url>http://repo.spring.io/snapshot</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
+
 		</repository>
 		<!-- For developing against latest Spring milestones -->
 		<repository>
