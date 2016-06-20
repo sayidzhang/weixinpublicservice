@@ -11,7 +11,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  public class SecurityConfig {
 
     @Configuration
-    @Order(1)
     public static class SoapApiConfigurationAdapter extends WebSecurityConfigurerAdapter {
         protected void configure(HttpSecurity http) throws Exception {
             http
