@@ -1,5 +1,6 @@
 package org.springframework.samples.mvc.simple;
 
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -7,9 +8,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
  @Configuration
+ @ComponentScan
  @EnableWebSecurity
  public class SecurityConfig {
 
+	@Order(1)
     @Configuration
     public static class SoapApiConfigurationAdapter extends WebSecurityConfigurerAdapter {
         protected void configure(HttpSecurity http) throws Exception {
@@ -20,7 +23,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
         }
     }
 
-
+	@Order(2)
     @Configuration
     public static class WebApiConfigurationAdapter extends WebSecurityConfigurerAdapter {
 
