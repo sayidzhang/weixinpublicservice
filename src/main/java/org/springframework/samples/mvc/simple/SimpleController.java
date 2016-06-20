@@ -6,6 +6,7 @@ import java.text.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -36,10 +37,9 @@ public class SimpleController {
     }
     
     
-    @RequestMapping(value = "wechat/receive", method = RequestMethod.POST, produces = "text/plain")
-    public @ResponseBody String receive(String x) throws ParseException, IOException {
+    @RequestMapping(value = "wechat/receive", method = RequestMethod.POST)
+    public void receive(@RequestBody String x) throws ParseException, IOException {
     	System.out.println("1");
     	System.out.println(x);
-        return "y";
     }
 }
